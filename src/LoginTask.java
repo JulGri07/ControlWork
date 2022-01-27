@@ -32,7 +32,7 @@ public class LoginTask {
             System.exit(1);
         }
 
-        if (false && !validationAccess(password, username)) {
+        if (!validationAccess(password, username)) {
             System.exit(1);
         }
         boolean isExit = false;
