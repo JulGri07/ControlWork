@@ -1,5 +1,7 @@
+package controlWork.Fibonacci;
+
 /*
-4. Fibonacci (Рассчитать первых 20 чисел Фиббоначии вывести их на экран)
+4. controlWork.Fibonacci.Fibonacci (Рассчитать первых 20 чисел Фиббоначии вывести их на экран)
  */
 public class Fibonacci {
 

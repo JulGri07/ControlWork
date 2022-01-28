@@ -1,3 +1,12 @@
+package com.company;
+
+import controlWork.Login.LoginTask;
+import controlWork.Armstrong.Armstrong;
+import controlWork.EvenNumber.EvenNumber;
+import controlWork.Fibonacci.Fibonacci;
+import controlWork.Replace.Replace;
+import controlWork.Reverse.Reverse;
+
 import java.util.Scanner;
 
 /*
@@ -5,11 +14,7 @@ import java.util.Scanner;
 ошибку. Пара логин-пароль храниться в переменных. После удачного логина выводим меню с 5 вариантами задач. Добавить обработку ошибок. Разложить задачи на методы
 (плюсом будет разложение на классы). Все запушить в гит отдельным проэктом или папкой и скинуть мне мердж реквестом.
  */
-
-public class LoginTask {
-
-    private static String Username = "Jul";
-    private static String Password = "qwerty";
+public class Main {
 
     public static void main(String[] args) {
 
@@ -32,7 +37,7 @@ public class LoginTask {
             System.exit(1);
         }
 
-        if (!validationAccess(password, username)) {
+        if (!LoginTask.validationAccess(password, username)) {
             System.exit(1);
         }
         boolean isExit = false;
@@ -65,34 +70,15 @@ public class LoginTask {
         } while (!isExit);
     }
 
-    static boolean validationAccess(String password, String username) {
-        if (username.equals(Username) && password.equals(Password)) {
-            System.out.println("Access Granted! Welcome!\n");
-            return true;
-        } else if (username.equals(Username)) {
-            System.out.println("Invalid Password!");
-            return false;
-        } else if (password.equals(Password)) {
-            System.out.println("Invalid Username!");
-            return false;
-        } else {
-            System.out.println("Invalid Username & Password!");
-            return false;
-        }
-    }
     public static void printMenu() {
         System.out.println(" ");
         System.out.println("1. Even Number");
         System.out.println("2. Armstrong");
-        System.out.println("3. Reverse");
-        System.out.println("4. Fibonacci");
-        System.out.println("5. Replace");
+        System.out.println("3. controlWork.Reverse.Reverse");
+        System.out.println("4. controlWork.Fibonacci.Fibonacci");
+        System.out.println("5. controlWork.Replace.Replace");
         System.out.println("0. Exit\n");
         System.out.print("Choose your destiny: ");
     }
 }
-
-
-
-
 
