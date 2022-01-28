@@ -1,4 +1,4 @@
-package com.company;
+package controlWork;
 
 import controlWork.Login.LoginTask;
 import controlWork.Armstrong.Armstrong;
