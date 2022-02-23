@@ -1,5 +1,6 @@
 package controlWork.Armstrong;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
  /*
@@ -41,12 +42,22 @@ import java.util.Scanner;
 
         public static void doTask () {
 
+
             Scanner scanner = new Scanner(System.in);
             System.out.println("Do task 2\n");
             System.out.print("Input integer: ");
-            int num = scanner.nextInt();
 
-            System.out.println("Num " + num + (isArmstrong(num) ? " is " : " is not ") + "Armstrong number");
+            try {
+                String inputString = scanner.nextLine();
+                int num = Integer.parseInt(inputString);
+
+                System.out.println("Num " + num + (isArmstrong(num) ? " is " : " is not ") + "Armstrong number");
+            } catch (NumberFormatException exception){
+                System.out.println("That not an int number!");
+            }
+
+
+
         }
     }
 
