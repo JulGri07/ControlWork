@@ -1,5 +1,7 @@
 package controlWork.Reverse;
 
+import controlWork.LoginException;
+
 import java.util.Scanner;
 
 /*
@@ -7,9 +9,11 @@ import java.util.Scanner;
  */
 public class Reverse {
     public static void main(String[] args) {
-
-        doTask();
-
+        try {
+            doTask();
+        } catch (LoginException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
     static String reverseString(String str) {
 
@@ -20,14 +24,17 @@ public class Reverse {
         }
         return result;
     }
-    public static void doTask () {
+    public static void doTask () throws LoginException {
 
         System.out.println("Do task 3\n");
         System.out.println("Input a string");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        if (str.length()<1 || str.length()>20) {
+            throw new LoginException("Invalid string length");
+        }
 
-        System.out.println("controlWork.Reverse.Reverse string is\n" + reverseString(str));
+        System.out.println("Reverse string is\n" + reverseString(str));
     }
 
 }
